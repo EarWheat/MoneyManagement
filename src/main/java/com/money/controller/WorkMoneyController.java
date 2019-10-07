@@ -1,6 +1,9 @@
 package com.money.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.money.util.JsonBuild;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorkMoneyController {
 
     @GetMapping
-    public String HelloWorld(){
-        return "hello spring";
+    public JSONObject HelloWorld(){
+        JSONObject hello = new JSONObject();
+        hello.put("info","hello spring");
+        return new JsonBuild().success(hello);
+    }
+
+    /**
+     * @param param
+     * @return JSON
+     * @desc 获取工资详情
+     */
+    @RequestMapping("detail")
+    public JSONObject getDetail(@RequestBody JSONObject param){
+        if(!param.containsKey("userId")){
+            return new JsonBuild().error("user not exist");
+        }
+        return new JsonBuild().success();
     }
 }
