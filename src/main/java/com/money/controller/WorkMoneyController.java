@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /*
  * @author:liuzhaolu
  * @createTime: 2019-09-30 14:58
- * @desc:
+ * @desc:工资收入计算
  */
 @RestController
 @RequestMapping("work")
