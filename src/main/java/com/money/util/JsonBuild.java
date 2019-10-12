@@ -33,6 +33,17 @@ public class JsonBuild {
     }
 
     /**
+     * JSON成功返回,info
+     * @param info
+     * @return
+     */
+    public JSONObject success(String info){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("errno",0);
+        jsonObject.put("errmsg",info);
+        return jsonObject;
+    }
+    /**
      * JSON失败返回
      * @param errmsg
      * @return

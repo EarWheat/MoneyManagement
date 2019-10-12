@@ -25,4 +25,21 @@
             </list>
         </property>
     </bean>
+
+
+    <!-- 将多个配置文件位置放到列表中 -->
+    <bean id="propertyResources" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <!-- 这里支持多种寻址方式：classpath和file  这里用的classpath-->
+                <value>classpath:config/my.properties</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <!-- 将配置文件读取到容器中，交给Spring管理 -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" ref="propertyResources">
+
+        </property>
+    </bean>
 </beans>
