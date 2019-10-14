@@ -43,7 +43,7 @@ public class MyMoney {
     }
 
     public float getCostTime() {
-        costTime = costFifty / costFiftyTime;
+        costTime = this.getCostFifty() / costFiftyTime;
         return costTime;
     }
 
