@@ -91,7 +91,12 @@
       <version>5.1.45</version>
     </dependency>
 
-
+    <!--Resource注解-->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.2</version>
+    </dependency>
     <!--阿里fastJson-->
     <dependency>
       <groupId>com.alibaba</groupId>

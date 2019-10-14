@@ -1,14 +1,14 @@
 package com.money.dao.My;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /*
  * @author:liuzhaolu
  * @createTime: 2019-10-12 16:43
  * @desc:
  */
-@Component
+@Repository
 public class MyMoney {
     @Value("${cost}")
     private int cost;   // 点卡成本
