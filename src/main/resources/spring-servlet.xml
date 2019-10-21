@@ -33,9 +33,30 @@
             <list>
                 <!-- 这里支持多种寻址方式：classpath和file  这里用的classpath-->
                 <value>classpath:config/my.properties</value>
+                <value>classpath:config/jdbc.properties</value>
             </list>
         </constructor-arg>
     </bean>
+
+    <!-- 配置第一个数据源 -->
+    <bean id="defultdataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${driverClasss}"/>
+        <property name="url" value="${jdbcUrl}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${initialSize}"></property>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${maxActive}"></property>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${maxIdle}"></property>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${minIdle}"></property>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${maxWait}"></property>
+    </bean>
+
     <!-- 将配置文件读取到容器中，交给Spring管理 -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" ref="propertyResources">
