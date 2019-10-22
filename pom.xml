@@ -115,6 +115,17 @@
       <artifactId>mybatis</artifactId>
       <version>3.4.4</version>
     </dependency>
+    <!-- Map工具类 -->
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
     <!--Resource注解-->
     <dependency>
       <groupId>javax.annotation</groupId>
