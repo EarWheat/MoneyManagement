@@ -34,13 +34,13 @@ public class JsonBuild {
 
     /**
      * JSON成功返回,info
-     * @param info
+     * @param object
      * @return
      */
-    public JSONObject success(String info){
+    public JSONObject success(Object object){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("errno",0);
-        jsonObject.put("errmsg",info);
+        jsonObject.put("errmsg",object.toString());
         return jsonObject;
     }
     /**

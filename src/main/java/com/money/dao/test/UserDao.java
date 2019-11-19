@@ -6,15 +6,13 @@ package com.money.dao.test;
  * @desc:
  */
 
+import com.money.entity.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+public interface UserDao {
 
-@Repository
-public interface UserDao<User> {
+    User selectById(@Param("userId")String userId);
 
-    List<User> selectId(String username);
-
-    User selectById(String userId);
-
+    User selectByUserName(@Param("userName")String userName);
 }

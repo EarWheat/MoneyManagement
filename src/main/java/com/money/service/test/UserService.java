@@ -8,7 +8,8 @@ import com.money.entity.User;
  * @desc:
  */
 public interface UserService {
-    boolean doUserLogin(User user);
 
     User getUserInfoById(String userId);
+
+    User getUserInfoByUserName(String userName);
 }

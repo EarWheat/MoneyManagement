@@ -19,6 +19,13 @@
         select
         <include refid="Base_Column_List" />
         from user
-        where user_id = #{user_id,jdbcType=LONG}
+        where user_id = #{user_id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{userName,jdbcType=VARCHAR}
     </select>
 </mapper>

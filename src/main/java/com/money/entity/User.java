@@ -1,5 +1,7 @@
 package com.money.entity;
 
+import org.springframework.stereotype.Repository;
+
 /*
  * @author:liuzhaolu
  * @createTime: 2019-10-22 18:16

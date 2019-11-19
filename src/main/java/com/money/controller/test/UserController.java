@@ -21,12 +21,12 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("/")
+    @RequestMapping("/getUserByUserName")
     public JSONObject getUserInfo(@RequestBody JSONObject param){
-        if(!param.containsKey("userId")){
+        if(!param.containsKey("userName")){
             return new JsonBuild().error("user not exist");
         }
-        User user = userService.getUserInfoById(param.getString("userId"));
-        return new JsonBuild().success();
+        User user = userService.getUserInfoByUserName(param.getString("userName"));
+        return new JsonBuild().success(user);
     }
 }
