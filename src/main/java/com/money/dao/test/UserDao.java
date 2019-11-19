@@ -15,4 +15,6 @@ public interface UserDao<User> {
 
     List<User> selectId(String username);
 
+    User selectById(String userId);
+
 }

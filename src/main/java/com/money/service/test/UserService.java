@@ -9,4 +9,6 @@ import com.money.entity.User;
  */
 public interface UserService {
     boolean doUserLogin(User user);
+
+    User getUserInfoById(String userId);
 }

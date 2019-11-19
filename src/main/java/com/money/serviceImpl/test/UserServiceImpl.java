@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
             }
         }
     }
+
+    public User getUserInfoById(String userId){
+        User user = dao.selectById(userId);
+        return user;
+    }
 }
